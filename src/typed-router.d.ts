@@ -34,6 +34,27 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/index copy': RouteRecordInfo<
+      '/index copy',
+      '/index%20copy',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/usuario/': RouteRecordInfo<
+      '/usuario/',
+      '/usuario',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/usuario/[usuario]': RouteRecordInfo<
+      '/usuario/[usuario]',
+      '/usuario/:usuario',
+      { usuario: ParamValue<true> },
+      { usuario: ParamValue<false> },
+      | never
+    >,
   }
 
   /**
@@ -50,6 +71,24 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
+      views:
+        | never
+    }
+    'src/pages/index copy.vue': {
+      routes:
+        | '/index copy'
+      views:
+        | never
+    }
+    'src/pages/usuario/index.vue': {
+      routes:
+        | '/usuario/'
+      views:
+        | never
+    }
+    'src/pages/usuario/[usuario].vue': {
+      routes:
+        | '/usuario/[usuario]'
       views:
         | never
     }

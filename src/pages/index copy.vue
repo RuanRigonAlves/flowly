@@ -1,13 +1,7 @@
 <template>
-  <v-row
-    class="ga-0"
-    :style="{
-      flexDirection: mobile ? 'column-reverse' : 'row',
-      height: mobile ? '' : '100%',
-    }"
-  >
-    <v-col cols="12" md="6">
-      <section class="fill-height d-flex align-center justify-center">
+  <v-row class="h-100">
+    <v-col cols="6">
+      <section class="h-100 d-flex align-center justify-center">
         <div class="layout">
           <div class="d-flex">
             <v-img src="@/assets/logo.png" width="125" height="125"></v-img>
@@ -52,44 +46,36 @@
       </section>
     </v-col>
 
-    <v-col cols="12" md="6" class="bg-primary">
-      <v-row
-        :style="{
-          flexDirection: mobile ? 'row' : 'column',
-        }"
-        class="justify-space-between fill-height pa-0 ga-0"
-      >
-        <v-col cols="6">
-          <v-img src="@/assets/img-login.png" height="100%" contain></v-img>
-        </v-col>
+    <v-col cols="6" class="bg-primary">
+      <v-container class="pa-0 fill-height">
+        <v-row class="flex-column fill-height">
+          <v-col cols="6">
+            <v-img src="@/assets/img-login.png" style="height: 100%"></v-img>
+          </v-col>
 
-        <v-col cols="6">
-          <v-container
-            fluid
-            class="pa-0 d-flex align-center justify-center flex-column fill-height ga-12"
-            style="font-size: 16pt; max-width: 80%"
-          >
-            <p :style="{ display: mobile ? 'none' : 'block' }">
-              Organize seus gastos, acompanhe seus investimentos e tome decisões
-              com mais confiança.
-            </p>
+          <v-col cols="6" class="d-flex justify-center">
+            <div
+              class="d-flex align-center flex-column ga-12"
+              style="font-size: 16pt; max-width: 50%"
+            >
+              <p>
+                Organize seus gastos, acompanhe seus investimentos e tome
+                decisões com mais confiança.
+              </p>
 
-            <p>
-              O <b>Flowly</b> transforma números em clareza para você focar no
-              que realmente importa.
-            </p>
-          </v-container>
-        </v-col>
-      </v-row>
+              <p>
+                O <b>Flowly</b> transforma números em clareza para você focar no
+                que realmente importa.
+              </p>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-col>
   </v-row>
 </template>
 
-<script setup>
-import { useDisplay } from "vuetify";
-
-const { mobile } = useDisplay();
-</script>
+<script setup></script>
 
 <style scoped>
 h1 {
@@ -100,5 +86,9 @@ h1 {
 p {
   font-family: Inter;
   margin: 0;
+}
+
+.layout {
+  width: 30%;
 }
 </style>
