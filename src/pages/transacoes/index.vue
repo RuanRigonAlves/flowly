@@ -24,6 +24,6 @@
 <script setup>
 import Carousel from "@/components/Carousel.vue";
 import ListaTransacao from "@/components/ListaTransacao.vue";
-import BottomNavBar from "@/layout/BottomNavBar.vue";
-import TopNavBar from "@/layout/TopNavBar.vue";
+import BottomNavBar from "@/layout/components/BottomNavBar.vue";
+import TopNavBar from "@/layout/components/TopNavBar.vue";
 </script>

@@ -6,7 +6,7 @@
           <div class="d-flex align-center">
             <v-avatar
               icon="mdi-cart-check"
-              class="text-black bg-lgray mr-2"
+              class="text-black bg-white mr-2"
               size="60"
             >
             </v-avatar>

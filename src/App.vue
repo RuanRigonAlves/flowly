@@ -1,11 +1,22 @@
 <template>
-  <v-app>
-    <v-main class="fill-height">
+  <v-app class="bg-background">
+    <component :is="layouts[route.meta.layout || 'default']">
       <router-view />
-    </v-main>
+    </component>
   </v-app>
 </template>
 
-<script lang="ts" setup>
-//
+<script setup>
+import { useRoute } from "vue-router";
+import MainLayout from "@/layouts/MainLayout.vue";
+import AuthLayout from "@/layouts/AuthLayout.vue";
+
+const route = useRoute();
+
+console.log(route.meta);
+
+const layouts = {
+  default: MainLayout,
+  auth: AuthLayout,
+};
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation grow class="elevation-2">
+  <v-bottom-navigation grow class="bg-backgroundSecondary">
     <v-btn value="home">
       <v-icon>mdi-home-outline</v-icon>
     </v-btn>
