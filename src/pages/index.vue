@@ -1,19 +1,33 @@
 <template>
-  <v-container>
-    <div class="ma-0">
-      <h1 class="ma-0">Saldo</h1>
-      <p class="ma-0">R$ 9999,99</p>
-    </div>
-  </v-container>
+  <div class="d-flex justify-space-between align-center pr-4">
+    <v-card width="" flat>
+      <v-card-title class="font-weight-medium text-third">Saldo</v-card-title>
+      <v-card-text
+        style="font-size: 19pt"
+        class="font-weight-medium text-secondary"
+        >R$ 9999,99</v-card-text
+      >
+    </v-card>
 
-  <carousel></carousel>
-
-  <div>
-    <div class="d-flex justify-space-between align-center px-4">
-      <p class="font-weight-bold text-secondary">Transacoes recentes</p>
-      <v-btn flat class="text-primary font-weight-bold">Ver Todos</v-btn>
+    <div class="h-100 bg-white">
+      <v-btn
+        icon="mdi-card-multiple"
+        class="bg-primary"
+        size="55"
+        elevation="0"
+        rounded
+      ></v-btn>
+      <v-btn
+        icon="mdi-chart-box"
+        class="bg-white"
+        size="55"
+        rounded
+        elevation="0"
+      ></v-btn>
     </div>
   </div>
+
+  <carousel></carousel>
 
   <lista-transacao></lista-transacao>
 </template>

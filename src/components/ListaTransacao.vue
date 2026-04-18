@@ -1,4 +1,11 @@
 <template>
+  <div>
+    <div class="d-flex justify-space-between align-center px-4">
+      <p class="font-weight-bold text-secondary">Transacoes recentes</p>
+      <v-btn flat class="text-primary font-weight-bold">Ver Todos</v-btn>
+    </div>
+  </div>
+
   <v-list>
     <v-list-item v-for="i in 4">
       <div class="d-flex justify-space-between">
