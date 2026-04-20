@@ -13,8 +13,6 @@ import AuthLayout from "@/layouts/AuthLayout.vue";
 
 const route = useRoute();
 
-console.log(route.meta);
-
 const layouts = {
   default: MainLayout,
   auth: AuthLayout,
