@@ -1,15 +1,20 @@
 <template>
-  <v-stepper v-model="step" class="fill-height" editable="">
-    <v-stepper-header>
+  <v-stepper mobile v-model="step" class="fill-height" editable="">
+    <!-- Step header descricao -->
+    <header-descricao>
+      <template #titulo>{{ stepTitulo }}</template>
+      <template #subtitulo>{{ stepSubtitulo }}</template>
+    </header-descricao>
+
+    <v-stepper-header class="elevation-0 custom-stepper-header">
       <v-stepper-item :value="1"> </v-stepper-item>
       <v-stepper-item :value="2"> </v-stepper-item>
       <v-stepper-item :value="3"> </v-stepper-item>
     </v-stepper-header>
-
-    <v-stepper-window>
+    <v-stepper-window class="ma-0">
       <!-- Step 1 -->
       <v-stepper-window-item :value="1">
-        <v-radio-group v-model="form.tipo">
+        <v-radio-group v-model="form.tipo" class="d-flex justify-center">
           <stepper-card-tipo
             :tipo="'entrada'"
             @click="
@@ -68,6 +73,7 @@
 </template>
 
 <script setup>
+import HeaderDescricao from "@/components/HeaderDescricao.vue";
 import StepperCardTipo from "@/components/stepper/StepperCardTipo.vue";
 import { ref, computed } from "vue";
 
@@ -102,6 +108,28 @@ const categoriasFiltradas = computed(() => {
   return categorias[form.value.tipo] || [];
 });
 
+const stepTitulo = computed(() => {
+  switch (step.value) {
+    case 1:
+      return "Tipo de Transacao";
+    case 2:
+      return "Categorias";
+    case 3:
+      return "Informacoes";
+  }
+});
+
+const stepSubtitulo = computed(() => {
+  switch (step.value) {
+    case 1:
+      return "Selecione o tipo de transacao";
+    case 2:
+      return "Selecione uma categoria";
+    case 3:
+      return "Preencha os detalhes da transacao";
+  }
+});
+
 function nextStep() {
   step.value++;
 }
@@ -118,3 +146,9 @@ function selecionarCategoria(categoria) {
   nextStep();
 }
 </script>
+
+<style scoped>
+.custom-stepper-header button {
+  height: 30px;
+}
+</style>

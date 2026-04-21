@@ -1,5 +1,5 @@
 <template>
-  <v-card height="250" elevation="0" class="bg-color1 mb-5">
+  <v-card height="250" width="350" elevation="0" class="bg-color1 mx-8 mb-2">
     <div class="d-flex justify-center align-center h-100 flex-column">
       <v-icon
         :icon="
